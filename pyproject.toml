@@ -1,0 +1,13 @@
+[project]
+name = "issue-assistant"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dotenv>=0.9.9",
+    "langchain>=1.0.2",
+    "langchain-mcp-adapters>=0.1.11",
+    "langchain-openai>=1.0.1",
+    "langgraph>=1.0.1",
+]

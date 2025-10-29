@@ -1,0 +1,15 @@
+mcp_servers:
+  fetch:
+    command: "uvx"
+    args: ["mcp-server-fetch"]
+    transport: "stdio"
+
+  # faq:
+  #   command: "uvx"
+  #   args: ["mcp-server-faq"]
+  #   transport: "stdio"
+
+  # notify:
+  #   command: "uvx"
+  #   args: ["mcp-server-notify"]
+  #   transport: "stdio"
