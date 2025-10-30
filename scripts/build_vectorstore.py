@@ -21,7 +21,7 @@ class LocalEmbeddings(Embeddings):
         return self.model.encode(texts)
 
 
-def fetch_github_issues(repo_name: str, max_pages: int = 3, token: str = None, per_page: int = 10):
+def fetch_github_issues(repo_name: str, max_pages: int = 3, token: str = None, per_page: int = 30):
     """
     从指定仓库获取 issue 列表（含标题、正文、评论）
     使用单一进度条显示进度，分页逻辑与 per_page 参数一致。
@@ -83,7 +83,7 @@ def build_vector_db(repo_name: str, persist_dir: str = "data/chroma", max_pages:
 
     # === 构建 LangChain 文档对象 ===
     docs = [Document(page_content=i["content"], metadata={"title": i["title"], "id": i["number"]}) for i in issues]
-
+ 
     # === 文本切分 ===
     splitter = RecursiveCharacterTextSplitter(chunk_size=800, chunk_overlap=100)
     split_docs = splitter.split_documents(docs)
