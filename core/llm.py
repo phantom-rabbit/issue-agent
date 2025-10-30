@@ -1,6 +1,9 @@
-# core/llm.py
 from langchain_openai import ChatOpenAI
 import os
+
+from sympy import im
+import dotenv
+dotenv.load_dotenv(".env")
 
 def get_llm(model_name: str = "deepseek-chat", temperature: float = 0.3):
     """
@@ -16,3 +19,12 @@ def get_llm(model_name: str = "deepseek-chat", temperature: float = 0.3):
         temperature=temperature,
     )
     return llm
+
+from fast_agent import FastAgent
+
+
+
+
+
+fast = FastAgent("issueAgent", config_path="config/mcp.yaml")
+

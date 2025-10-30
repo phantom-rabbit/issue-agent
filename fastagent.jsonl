@@ -1,0 +1,2 @@
+{"level":"ERROR","timestamp":"2025-10-30T21:03:57.853655","namespace":"fast_agent.mcp.mcp_agent_client_session","message":"send_request failed: Connection closed"}
+{"level":"ERROR","timestamp":"2025-10-30T21:03:57.854626","namespace":"fast_agent.mcp.mcp_connection_manager","message":"feishu-message-server: Lifecycle task encountered an error: unhandled errors in a TaskGroup (1 sub-exception)","data":{"exc_info":true,"data":{"progress_action":"Error","server_name":"feishu-message-server"}}}
