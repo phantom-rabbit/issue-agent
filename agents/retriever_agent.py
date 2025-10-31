@@ -2,13 +2,12 @@
 from langchain_chroma import Chroma
 from typing import List
 from core.issue_state import IssueState
-from langchain_huggingface import HuggingFaceEmbeddings
-
+from scripts.build import LocalEmbeddings
 
 class RetrieverAgent:
-    def __init__(self, persist_dir="data/chroma", model_name="BAAI/bge-small-zh"):
+    def __init__(self, persist_dir="data/chroma_db", model_name="BAAI/bge-small-zh"):
         self.persist_dir = persist_dir
-        self.embeddings = HuggingFaceEmbeddings(model_name=model_name)
+        self.embeddings = LocalEmbeddings(model_name=model_name)
         self.db = Chroma(
             collection_name="issues",
             persist_directory=persist_dir,
@@ -36,8 +35,8 @@ if __name__ == "__main__":
     agent = RetrieverAgent()
     state = IssueState(
         issue_number=123,
-        issue_title="如何在csghub中创建可以微调的模型？",
-        issue_body="我想在csghub中创建一个可以微调的模型，但是不知道从哪里开始。",
+        issue_title="如何上传超过20MB的大文件到Gitlab？",
+        issue_body="我想上传一个超过20MB的大文件到Gitlab，但是上传失败。",
         comments=[],
         need_reply=True
     )
